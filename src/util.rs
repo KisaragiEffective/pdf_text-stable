@@ -27,7 +27,7 @@ pub enum Tri {
     Unknown,
 }
 
-#[derive(Copy, Clone, Debug)]
+#[derive(Copy, Clone, Debug, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[repr(C)]
 pub struct Rect {
