@@ -1,4 +1,5 @@
 use pathfinder_geometry::rect::RectF;
+#[cfg(feature = "serde")]
 use serde::{Serialize, Deserialize};
 
 
@@ -28,7 +29,7 @@ pub enum Tri {
 }
 
 #[derive(Copy, Clone, Debug, PartialEq)]
-#[derive(Serialize, Deserialize)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[repr(C)]
 pub struct Rect {
     pub x: f32,
@@ -47,7 +48,8 @@ impl From<RectF> for Rect {
     }
 }
 
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug)]
+#[cfg_attr(feature = "serde", derive(Serialize))]
 pub struct CellContent {
     pub text: String,
     pub rect: Rect,
