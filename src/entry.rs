@@ -53,6 +53,6 @@ impl Flow {
         }
     }
     pub fn add_table(&mut self, table: Table<CellContent>) {
-        
+        unimplemented!()
     }
 }
